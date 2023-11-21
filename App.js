@@ -11,7 +11,7 @@ export default function App () {
   if (!fontsLoaded) {
     return (
       <View style={styles.container}><Image 
-          source = {require("./assets/logo-cvte.png")}
+          source = {require("./assets/cropped-cvt-branco-3.png")}
           style = {styles.logo}
         />
       </View>
@@ -31,16 +31,19 @@ export default function App () {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#273E74',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   logo: {
-    marginBottom: 60
+    width: 200,
+    height: 200
   },
   text:{
     fontFamily: 'Rawline_400',
-    fontSize: 14
+    fontSize: 14,
+    color: '#FFFFFF'
   }
 })
 
