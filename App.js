@@ -114,9 +114,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: Dimensions.get('screen').height,
     padding: 18, 
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
+    flexDirection: 'column',
     justifyContent: 'space-between'
   },
   logo: {
@@ -126,8 +124,9 @@ const styles = StyleSheet.create({
   text:{
     fontFamily: 'Rawline_400',
     fontSize: 14,
-    color: '#333333'
-  }});
+    color: '#333333',
+  }
+});
 
 /*
 STUDY:
