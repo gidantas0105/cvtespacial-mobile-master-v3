@@ -1,11 +1,14 @@
 import { View, Text, StyleSheet } from 'react-native'
+import { WebView } from 'react-native-webview';
+const templateBase = require('./base.html');
+import { Dimensions } from 'react-native';
+const LARGURA = Dimensions.get('screen').width;
 
 export default function Fotos() {
     return(
         <View style={styles.container}>
-            <Text style={styles.text}>
-                Aqui serao exibidas as fotos
-            </Text>
+            <WebView source={{ uri: 'localhost:3333/sobre-o-cvte.html'}} 
+            style={styles.webView} />
         </View>
     )
 }
@@ -21,4 +24,8 @@ const styles = StyleSheet.create({
       fontFamily: 'Rawline_400',
       fontSize: 14,
       color: '#333333'
-    }});
+    },
+    webView: {
+        width: LARGURA
+    }
+});
