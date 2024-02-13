@@ -1,31 +1,18 @@
-import { View, Text, StyleSheet } from 'react-native'
-import { WebView } from 'react-native-webview';
-const templateBase = require('./base.html');
-import { Dimensions } from 'react-native';
-const LARGURA = Dimensions.get('screen').width;
+import React from 'react';
+import RenderHtml from 'react-native-render-html';
+import { useWindowDimensions } from 'react-native';
+import PaginaHTML from '../../assets/my-html-page'
 
-export default function Fotos() {
-    return(
-        <View style={styles.container}>
-            <WebView source={{ uri: 'localhost:3333/sobre-o-cvte.html'}} 
-            style={styles.webView} />
-        </View>
-    )
+const source = {
+  html: {PaginaHTML}
+};
+
+export default function MyHtmlPage() {
+    const { width } = useWindowDimensions();
+  return (
+    <RenderHtml
+    contentWidth={width}
+      source={source}
+    />
+  );
 }
-
-const styles = StyleSheet.create({
-    container: {
-      backgroundColor: '#f8f8f8',
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    text:{
-      fontFamily: 'Rawline_400',
-      fontSize: 14,
-      color: '#333333'
-    },
-    webView: {
-        width: LARGURA
-    }
-});

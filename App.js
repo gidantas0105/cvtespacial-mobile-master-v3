@@ -4,13 +4,14 @@ import { useFonts } from 'expo-font'
 //STUDY: expo-font acompanha o processo de carregamento das fontes de texto do sistema
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Dimensions } from 'react-native';
+
 import Fotos from './src/pages/Fotos'
 import Materiais from './src/pages/MateriaisDidaticos'
 import Noticias from './src/pages/Noticias'
 import Praticas from './src/pages/Praticas'
 import Videos from './src/pages/Videos'
 import DiaEspacial from './src/pages/DiaEspacial'
-import { Dimensions } from 'react-native';
 
 function HomeScreen({navigation}) {
   const [fontsLoaded] = useFonts({
